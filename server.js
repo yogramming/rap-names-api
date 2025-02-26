@@ -27,7 +27,7 @@ const rappers = {
 }
 
 app.get('/', (request, response) => {
-    response.sendFile(path.join(__dirname, "public", "index.html"))
+    response.sendFile(__dirname + "index.html")
 })
 
 // app.use(express.static("js"))
