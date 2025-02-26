@@ -1,9 +1,7 @@
 const express = require("express")
-require('dotenv').config();
 const app = express()
 const PORT = 8000
 const cors = require("cors")
-const path = require("path")
 
 app.use(cors())
 
@@ -27,14 +25,8 @@ const rappers = {
 }
 
 app.get('/', (request, response) => {
-    response.sendFile(path.join(__dirname, "public", "index.html"))
+    response.sendFile(__dirname + "index.html")
 })
-
-// app.use(express.static("js"))
-
-// app.get('/', (request, response) => {
-//     response.sendFile(__dirname + "/js/main.js")
-// })
 
 app.get('/api/:rapperName', (request, response) => {
     const rapperName = request.params.rapperName.toLowerCase()
